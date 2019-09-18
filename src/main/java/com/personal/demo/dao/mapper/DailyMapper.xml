@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.personal.demo.dao.DailyDao">
+    <select id="query" parameterType="com.personal.demo.bean.Daily" resultMap="daily">
+        SELECT * FROM `daily_record` WHERE 1=1
+        <include refid="serach"></include>
+        order by date desc
+        limit #{page},#{limit}
+    </select>
+
+    <select id="queryCount" parameterType="com.personal.demo.bean.Daily" resultType="java.lang.Long">
+        SELECT count(*) FROM `daily_record` where 1=1
+        <include refid="serach"></include>
+    </select>
+
+    <sql id="serach">
+        <if test="@com.personal.demo.Utils.Ognl@isNotEmpty(title)">and title LIKE '%${title}%'</if>
+        <if test="@com.personal.demo.Utils.Ognl@isNotEmpty(interest)">and interest = #{interest}</if>
+        <if test="@com.personal.demo.Utils.Ognl@isNotEmpty(selectDate)">
+            AND (date BETWEEN '${startDate}' AND '${endDate}')</if>
+    </sql>
+
+    <resultMap id="daily" type="com.personal.demo.bean.Daily">
+        <id column="id_" property="id"></id>
+        <result column="title" property="title"></result>
+        <result column="content" property="content"></result>
+        <result column="date" property="date"></result>
+        <result column="interest" property="interest"></result>
+        <result column="page" property="page"></result>
+        <result column="limit" property="limit"></result>
+        <result column="picture_url" property="pictureUrl"></result>
+    </resultMap>
+
+</mapper>
+
+

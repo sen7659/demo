@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.personal.demo.dao.UserDao">
+
+
+
+    <!--&lt;!&ndash; 通用查询映射结果 &ndash;&gt;-->
+    <!--<resultMap id="user" type="com.personal.demo.bean.User">-->
+        <!--<id column="id_" property="id"/>-->
+        <!--<result column="account_" property="account"/>-->
+        <!--<result column="name_" property="name"/>-->
+        <!--<result column="password_" property="password"/>-->
+        <!--<result column="email_" property="email"/>-->
+        <!--<result column="create_time_" property="createTime"/>-->
+        <!--<result column="pers_" property="pers"/>-->
+    <!--</resultMap>-->
+</mapper>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="www.yanshisan.cn" />
+    <meta name="robots" content="all" />
+    <title>文章</title>
+    <link rel="stylesheet" href="../../static/blog_template/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/blog_template/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../static/blog_template/css/master.css" />
+    <link rel="stylesheet" href="../../static/blog_template/css/gloable.css" />
+    <link rel="stylesheet" href="../../static/blog_template/css/nprogress.css" />
+    <link rel="stylesheet" href="../../static/blog_template/css/blog.css" />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			padding: 10px;
+			line-height: 20px;
+			overflow-x: hidden;
+			word-wrap: break-word;
+			font: 14px Helvetica Neue, Helvetica, PingFang SC, Microsoft YaHei, Tahoma, Arial, sans-serif;
+			-webkit-box-sizing: border-box !important;
+			-moz-box-sizing: border-box !important;
+			box-sizing: border-box !important;
+		}
+
+		a {
+			color: #01AAED;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #c00
+		}
+
+		p {
+			margin-bottom: 10px;
+		}
+
+		img {
+			display: inline-block;
+			border: none;
+			vertical-align: middle;
+			max-width: 100%;
+		}
+
+		pre {
+			margin: 10px 0;
+			padding: 10px;
+			line-height: 20px;
+			border: 1px solid #ddd;
+			border-left-width: 6px;
+			background-color: #F2F2F2;
+			color: #333;
+			font-family: Courier New;
+			font-size: 12px;
+		}
+	</style>
+
+
+
+</head>
+<body>
+    <div class="header">
+    </div>
+    <header class="gird-header">
+        <div class="header-fixed">
+            <div class="header-inner">
+                <a href="javascript:void(0)" class="header-logo" id="logo">Mr.Yss</a>
+                <nav class="nav" id="nav">
+                    <ul>
+						<li><a href="/index">首页</a></li>
+						<li><a href="/blog/article">博客</a></li>
+						<li><a href="/go/admin/index">控制台</a></li>
+                    </ul>
+                </nav>
+                <!--<a href="/User/QQLogin" class="blog-user">-->
+                    <!--<i class="fa fa-qq"></i>-->
+                <!--</a>-->
+                <!--<a class="phone-menu">-->
+                    <!--<i></i>-->
+                    <!--<i></i>-->
+                    <!--<i></i>-->
+                <!--</a>-->
+            </div>
+        </div>
+    </header>
+	<input id="interest" type="hidden">
+    <div class="doc-container" id="doc-container">
+        <div class="container-fixed">
+		    <div class="col-content">
+		        <div class="inner">
+					<article class="article-list bloglist" id="LAY_bloglist">
+						<div id="div1">
+
+						</div>
+					</article>
+					<div id="test1"></div>
+		        </div>
+		    </div>
+		    <div class="col-other">
+		        <div class="inner">
+					<div class="other-item" id="categoryandsearch">
+			    		<div class="search">
+					        <label class="search-wrap">
+					            <input type="text"  id="searchtxt" placeholder="输入关键字搜索" />
+					            <span class="search-icon" onclick="seach()">
+					                <i class="fa fa-search"></i>
+					            </span>
+					        </label>
+			        		<ul class="search-result"></ul>
+			    		</div>
+			    		<ul class="category mt20" id="category">
+				        	<li data-index="0" class="slider"></li>
+				        	<li data-index="1"><a onclick="seach2('')" href="javascript:void(0);">全部文章</a></li>
+				            <li data-index="2"><a onclick="seach2('基础')" href="javascript:void(0);">基础</a></li>
+				            <li data-index="3"><a onclick="seach2('框架')" href="javascript:void(0);">框架</a></li>
+				            <li data-index="4"><a onclick="seach2('异常')" href="javascript:void(0);">异常</a></li>
+				            <li data-index="5"><a onclick="seach2('随笔')" href="javascript:void(0);">随笔</a></li>
+				            <li data-index="6"><a onclick="seach2('日常')" href="javascript:void(0);">日常</a></li>
+			    		</ul>
+					</div>
+					<!--右边悬浮 平板或手机设备显示-->
+					<div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
+					<div class="article-category">
+					    <div class="article-category-title">分类导航</div>
+					            <a onclick="seach2('')" href="javascript:void(0);">全部文章</a>
+					            <a onclick="seach2('基础')" href="javascript:void(0);">基础</a>
+					            <a onclick="seach2('框架')" href="javascript:void(0);">框架</a>
+					            <a onclick="seach2('异常')" href="javascript:void(0);">异常</a>
+					            <a onclick="seach2('随笔')" href="javascript:void(0);">随笔</a>
+								<a onclick="seach2('日常')" href="javascript:void(0);">日常</a>
+					    <div class="f-cb"></div>
+					</div>
+					<!--遮罩-->
+					<div class="blog-mask animated layui-hide"></div>
+		        </div>
+		    </div>
+		</div>
+    </div>
+    <footer class="grid-footer">
+        <div class="footer-fixed">
+            <div class="copyright">
+                <div class="info">
+                    <p class="mt05">
+						Copyright &copy; 2019 闽ICP备19015731号
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../static/blog_template/layui/layui.js"></script>
+	<script src="../../static/js/blogArticle.js"></script>
+    <script src="../../static/blog_template/js/yss/gloable.js"></script>
+    <script src="../../static/blog_template/js/plugins/nprogress.js"></script>
+    <script>NProgress.start();</script>
+ 	<script src="../../static/blog_template/js/yss/article.js"></script>
+</body>
+</html>
