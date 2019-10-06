@@ -50,8 +50,7 @@ public class ShiroRealm extends AuthorizingRealm {
         }
         try {
             //获取登录信息保存至session
-            SecurityUtils.getSubject().getSession().setAttribute("userId",user.getId());
-
+             SecurityUtils.getSubject().getSession().setAttribute("userId",user.getId());
         } catch (Exception e) {
             e.printStackTrace();
             return null;

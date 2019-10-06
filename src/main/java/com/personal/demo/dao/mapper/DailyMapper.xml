@@ -6,14 +6,14 @@
 
 <mapper namespace="com.personal.demo.dao.DailyDao">
     <select id="query" parameterType="com.personal.demo.bean.Daily" resultMap="daily">
-        SELECT * FROM `daily_record` WHERE 1=1
+        SELECT id_,title,content,date,interest,picture_url FROM `daily_record` WHERE 1=1
         <include refid="serach"></include>
         order by date desc
         limit #{page},#{limit}
     </select>
 
     <select id="queryCount" parameterType="com.personal.demo.bean.Daily" resultType="java.lang.Long">
-        SELECT count(*) FROM `daily_record` where 1=1
+        SELECT count(id_) FROM `daily_record` where 1=1
         <include refid="serach"></include>
     </select>
 

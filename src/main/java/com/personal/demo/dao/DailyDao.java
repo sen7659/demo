@@ -13,4 +13,5 @@ public interface DailyDao extends BaseMapper<Daily> {
     public long queryCount(Daily daily);
 
     public List<Daily> query(Daily daily);
+
 }
